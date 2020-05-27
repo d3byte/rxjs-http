@@ -5,7 +5,7 @@
     "description": "HTTP client based on observables",
     "repository": "git@github.com:d3byte/rxjs-http.git",
     "author": "d3byte <pandinator@protonmail.com>",
-    "license": "ISC",
+    "license": "MIT",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "keywords": ["rxjs", "http", "client", "http library", "http client", "typescript http", "http rxjs", "rxjs http"],
