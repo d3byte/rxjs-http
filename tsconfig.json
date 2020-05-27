@@ -2,7 +2,7 @@
     "compileOnSave": false,
     "compilerOptions": {
         "outDir": "./lib",
-        "sourceMap": true,
+        "sourceMap": false,
         "downlevelIteration": true,
         "experimentalDecorators": true,
         "module": "commonjs",
