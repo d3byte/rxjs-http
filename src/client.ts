@@ -1,8 +1,10 @@
 import { EMPTY, from, Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
+
 import * as fetchPonyfill from 'fetch-ponyfill';
 
+import { ObjectInterface } from './interfaces/object.interface';
 import { ConfigurationInterface } from './interfaces/configuration.interface';
 
 const { fetch } = fetchPonyfill();
