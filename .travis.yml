@@ -7,8 +7,6 @@ cache: yarn
 install: yarn
 
 script:
-    - yarn boot-test-api
-    - yarn test
     - yarn build
 
 branches:
