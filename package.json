@@ -1,14 +1,23 @@
 {
     "name": "@d3byte/rxjs-http",
     "private": false,
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "HTTP client based on observables",
     "repository": "git@github.com:d3byte/rxjs-http.git",
     "author": "d3byte <pandinator@protonmail.com>",
     "license": "MIT",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
-    "keywords": ["rxjs", "http", "client", "http library", "http client", "typescript http", "http rxjs", "rxjs http"],
+    "keywords": [
+        "rxjs",
+        "http",
+        "client",
+        "http library",
+        "http client",
+        "typescript http",
+        "http rxjs",
+        "rxjs http"
+    ],
     "files": [
         "lib/**/*"
     ],
@@ -18,11 +27,11 @@
         "format": "prettier --write \"src/**/*.ts\"",
         "lint": "tslint --fix -p tsconfig.json",
         "build": "tsc",
-        "prepublishOnly" : "npm test && npm run lint",
-        "prepare" : "npm run build",
-        "preversion" : "npm run lint",
-        "version" : "npm run format && git add -A src",
-        "postversion" : "git push && git push --tags"
+        "prepublishOnly": "npm test && npm run lint",
+        "prepare": "npm run build",
+        "preversion": "npm run lint",
+        "version": "npm run format && git add -A src",
+        "postversion": "git push && git push --tags"
     },
     "husky": {
         "hooks": {
