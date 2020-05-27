@@ -31,13 +31,13 @@
         }
     },
     "dependencies": {
-        "rxjs": "^6.5.5"
+        "rxjs": "^6.5.5",
+        "fetch-ponyfill": "^6.1.0"
     },
     "devDependencies": {
         "@types/jest": "^25.2.3",
         "cors": "^2.8.5",
         "express": "^4.17.1",
-        "fetch-ponyfill": "^6.1.0",
         "husky": "^4.2.5",
         "jest": "^26.0.1",
         "prettier": "^2.0.5",
