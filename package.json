@@ -1,0 +1,40 @@
+{
+    "name": "@d3byte/rxjs-http",
+    "version": "0.0.0",
+    "description": "HTTP client based on observables",
+    "main": "index.js",
+    "repository": "git@github.com:d3byte/rxjs-http.git",
+    "author": "d3byte <pandinator@protonmail.com>",
+    "license": "ISC",
+    "files": [
+        "lib/**/*"
+    ],
+    "scripts": {
+        "test": "jest --config jestconfig.json",
+        "format": "prettier --write \"src/**/*.ts\"",
+        "lint": "tslint --fix -p tsconfig.json",
+        "build": "tsc"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn lint && yarn format",
+            "pre-push": "yarn test"
+        }
+    },
+    "dependencies": {
+        "rxjs": "^6.5.5"
+    },
+    "devDependencies": {
+        "@types/jest": "^25.2.3",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "fetch-ponyfill": "^6.1.0",
+        "husky": "^4.2.5",
+        "jest": "^26.0.1",
+        "prettier": "^2.0.5",
+        "ts-jest": "^26.0.0",
+        "tslint": "^6.1.2",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^3.9.3"
+    }
+}

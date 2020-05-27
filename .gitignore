@@ -1,0 +1,12 @@
+/node_modules/
+/.idea
+.DS_Store
+v1
+node_modules
+.idea
+/lib
+yarn.lock
+yarn-error.log
+
+coverage
+/lib/
