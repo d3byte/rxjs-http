@@ -5,6 +5,8 @@ import * as fetchPonyfill from 'fetch-ponyfill';
 
 import { ObjectInterface } from './interfaces/object.interface';
 import { ConfigurationInterface } from './interfaces/configuration.interface';
+import { OptionsInterface } from './interfaces/options.inteface';
+import { MethodsInterface } from './interfaces/methods.interface';
 
 const { fetch } = fetchPonyfill();
 
@@ -21,7 +23,7 @@ function isResponseOk(response: Response): boolean {
     return response.ok || (response.status >= 200 && response.status < 300);
 }
 
-export class HttpClient {
+export class HttpClient implements MethodsInterface {
     constructor(public configuration: ConfigurationInterface) {}
 
     private getHeaders(headers: ObjectInterface = {}): ObjectInterface {
@@ -49,6 +51,7 @@ export class HttpClient {
         const handledBody = this.isBodyJson(body as BodyInit) ? JSON.stringify(body) : (body as BodyInit);
         const options: RequestInit = {
             method,
+            mode: 'cors',
             body: handledBody,
             headers: this.getHeaders(headers),
         };
@@ -61,6 +64,21 @@ export class HttpClient {
                 return of(error);
             }),
         );
+    }
+
+    public declarativeRequest<ResponseType>(url: string, options: OptionsInterface): Observable<ResponseType> {
+        const bodyAndHeaders: any[] = [];
+
+        if (options.body) {
+            bodyAndHeaders.push(options.body);
+        }
+
+        if (options.headers) {
+            bodyAndHeaders.push(options.headers);
+        }
+
+        // @ts-ignore
+        return this[options.method]<ResponseType>(url, ...bodyAndHeaders);
     }
 
     public get<ResponseType>(url: string, headers?: ObjectInterface): Observable<ResponseType> {
