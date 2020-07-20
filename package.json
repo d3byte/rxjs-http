@@ -40,8 +40,8 @@
         }
     },
     "dependencies": {
-        "rxjs": "^6.5.5",
-        "fetch-ponyfill": "^6.1.0"
+        "fetch-ponyfill": "^6.1.0",
+        "rxjs": "^6.5.5"
     },
     "devDependencies": {
         "@types/jest": "^25.2.3",

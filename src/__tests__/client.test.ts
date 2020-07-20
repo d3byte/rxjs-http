@@ -81,39 +81,52 @@ describe('Http Client', () => {
         const httpClient = http(configuration);
 
         test('Declarative request', (done) => {
-            const get$ = httpClient.declarativeRequest<TestResponse>('test', { method: 'get' })
-                .pipe(tap((response: TestResponse) => {
-                    expect(response.test).toBeDefined();
-                    expect(response.test).toBe('data');
-                }));
+            const get$ = httpClient
+                .declarativeRequest<TestResponse>('test', { method: 'get' })
+                .pipe(
+                    tap((response: TestResponse) => {
+                        expect(response.test).toBeDefined();
+                        expect(response.test).toBe('data');
+                    }),
+                );
 
-            const post$ = httpClient.declarativeRequest<TestResponse>('test', { method: 'post', body: { anyBody: 'is Cool' } })
-                .pipe(tap((response: TestResponse) => {
-                    expect(response.test).toBeDefined();
-                    expect(response.test).toBe('data');
-                }));
+            const post$ = httpClient
+                .declarativeRequest<TestResponse>('test', { method: 'post', body: { anyBody: 'is Cool' } })
+                .pipe(
+                    tap((response: TestResponse) => {
+                        expect(response.test).toBeDefined();
+                        expect(response.test).toBe('data');
+                    }),
+                );
 
-            const put$ = httpClient.declarativeRequest<TestResponse>('test', { method: 'put', body: { anyBody: 'is Cool' } })
-                .pipe(tap((response: TestResponse) => {
-                    expect(response.test).toBeDefined();
-                    expect(response.test).toBe('data');
-                }));
+            const put$ = httpClient
+                .declarativeRequest<TestResponse>('test', { method: 'put', body: { anyBody: 'is Cool' } })
+                .pipe(
+                    tap((response: TestResponse) => {
+                        expect(response.test).toBeDefined();
+                        expect(response.test).toBe('data');
+                    }),
+                );
 
-            const patch$ = httpClient.declarativeRequest<TestResponse>('test', { method: 'patch', body: { anyBody: 'is Cool' } })
-                .pipe(tap((response: TestResponse) => {
-                    expect(response.test).toBeDefined();
-                    expect(response.test).toBe('data');
-                }));
+            const patch$ = httpClient
+                .declarativeRequest<TestResponse>('test', { method: 'patch', body: { anyBody: 'is Cool' } })
+                .pipe(
+                    tap((response: TestResponse) => {
+                        expect(response.test).toBeDefined();
+                        expect(response.test).toBe('data');
+                    }),
+                );
 
-            const delete$ = httpClient.declarativeRequest<TestResponse>('test', { method: 'delete', body: { anyBody: 'is Cool' } })
-                .pipe(tap((response: TestResponse) => {
-                    expect(response.test).toBeDefined();
-                    expect(response.test).toBe('data');
-                }));
+            const delete$ = httpClient
+                .declarativeRequest<TestResponse>('test', { method: 'delete', body: { anyBody: 'is Cool' } })
+                .pipe(
+                    tap((response: TestResponse) => {
+                        expect(response.test).toBeDefined();
+                        expect(response.test).toBe('data');
+                    }),
+                );
 
-            forkJoin(get$, post$, put$, patch$, delete$)
-                .subscribe(() => done());
-
+            forkJoin(get$, post$, put$, patch$, delete$).subscribe(() => done());
         });
 
         test('GET', (done) => {
