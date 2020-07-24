@@ -6,8 +6,8 @@
     "repository": "git@github.com:d3byte/rxjs-http.git",
     "author": "d3byte <pandinator@protonmail.com>",
     "license": "MIT",
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "main": "lib/http.js",
+    "types": "lib/http.d.ts",
     "keywords": [
         "rxjs",
         "http",

@@ -5,7 +5,7 @@
         "sourceMap": false,
         "downlevelIteration": true,
         "experimentalDecorators": true,
-        "module": "commonjs",
+        "module": "ES2015",
         "declaration": true,
         "moduleResolution": "node",
         "importHelpers": true,
